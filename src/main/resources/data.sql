@@ -1,3 +1,5 @@
-INSERT INTO book(isbn, title, author,description) VALUES (1111111, 'The Spirit Thief (The Legend of Eli Monpress #1)', 'Rachel Aaron', 'Eli Monpress is talented.');
+--DELETE FROM book;
 
-INSERT INTO book(isbn, title, author,description) VALUES (2222222, 'The Spirit Rebellion (The Legend of Eli Monpress, #2)', 'Rachel Aaron', 'Eli Monpress is brilliant. He''s incorrigible.');
+INSERT INTO book(isbn, title, author,description) VALUES (11, 'The Spirit of JAVA', 'Chris Cho', 'Test for repository');
+
+INSERT INTO book(isbn, title, author,description) VALUES (22, 'Awesome SPRING', 'Rachel Cho', 'I love SPRING!!');
