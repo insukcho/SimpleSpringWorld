@@ -1,2 +1,2 @@
 ## Reference
-https://spring.io/guides/gs/consuming-rest
+http://ufasoli.blogspot.kr/2014/02/spring-boot-and-spring-data-jpa_6.html
