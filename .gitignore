@@ -4,5 +4,7 @@
 /.settings/
 /.git/
 /frontend/node_modules/
+/frontend/npm-debug.log
+/frontend/dist/
 /.gradle/
 /build/

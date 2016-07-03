@@ -25,7 +25,12 @@ public class FakeUserRepository implements UserRepository {
 
 	@Override
 	public User findOne(Long id) {
-		return save(new User(1L, "chircho",  "q1w2e3", "Chris Cho", "1980.06.05", "isi.cho@gmail.com", "He love SPRING!!", UserType.PASSENGER));
+		for(User u: users) {
+			if(u.getRegNo().equals(id)) {
+				return u;
+			}
+		}
+		return null;
 	}
 
 	@Override
@@ -59,7 +64,6 @@ public class FakeUserRepository implements UserRepository {
 	@Override
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override

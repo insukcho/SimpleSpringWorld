@@ -16,11 +16,15 @@ apply plugin: 'spring-boot'
 jar {
     baseName = 'tech-trial'
     version =  '0.0.1'
+    
+    from('frontend/dist') {
+        into 'static'
+    }
 }
 
-jar.dependsOn('static:bundle')
-check.dependsOn('static:check')
-clean.dependsOn('static:clean')
+//jar.dependsOn('frontend:bundle')
+check.dependsOn('frontend:check')
+clean.dependsOn('frontend:clean')
 
 repositories {
     mavenCentral()
