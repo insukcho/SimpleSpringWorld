@@ -41,10 +41,41 @@
                 { name: "email", type: "text", width: 180 },
                 { name: "type", type: "text", width: 100},
                 { type: "control" }
-            ]
+            ],
+            /*
+            onItemInserting: function(args) {
+                debugger;
+                $.ajax({
+                    url: `/users?`,
+                    type: 'PUT',
+                    success: function(result) {
+                        // Do something with the result
+                    }
+                });
+            },
+            onItemUpdating: function(args) {
+                $.ajax({
+                    url: '/users?reg_no=',
+                    type: 'POST',
+                    success: function(result) {
+                        // Do something with the result
+                    }
+                });
+            },
+            */
+            onItemDeleting: function(args) {
+                $.ajax({
+                    url: '/user?reg_no='.concat(args.item.regNo),
+                    type: 'DELETE',
+                    success: function(result) {
+                    	debugger;
+                        console.log('Delete successfully');
+                    }
+                });
+            }
 
-		});
-	});
+        });
+    });
     </script>
 </body>
 </html>
