@@ -3,3 +3,6 @@
 /.mvn/
 /.settings/
 /.git/
+/static/node_modules/
+/.gradle/
+/build/

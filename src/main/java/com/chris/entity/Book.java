@@ -11,6 +11,8 @@ public class Book {
 	private String title;
 	private String author;
 	private String description;
+	
+	public Book() {}
 
 	public Book(Integer isbn, String title, String author, String description) {
 		super();
