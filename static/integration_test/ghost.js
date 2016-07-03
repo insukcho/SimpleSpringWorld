@@ -20,8 +20,8 @@ page.onError = function(msg, trace) {
         console.log('  ', item.file, ':', item.line);
     });
 };
-page.settings.userName = 'insuk.cho@doosan.com';
-page.settings.password = 'keepitsimple';
+page.settings.userName = 'isi.cho@gmail.com';
+page.settings.password = '1234';
 page.open('http://localhost:3000', function(status) {
     console.log("Status: " + status);
     phantom.exit();

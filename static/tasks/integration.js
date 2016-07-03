@@ -35,8 +35,10 @@ gulp.task('selenium-start', ['selenium-install'], function (done) {
 
 gulp.task('spring-build', function (done) {
     var finished = false;
+    console.log(path);
     exec(`${isWindows ? 'gradlew' : './gradlew'} assemble`, {cwd: path.join(process.cwd(), '..')}, function (error) {
         if (error) {
+        	console.log(error);
             throw error;
         }
         finished = true;
@@ -55,7 +57,7 @@ gulp.task('spring-build', function (done) {
 });
 
 gulp.task('spring-start', ['spring-build'], function () {
-    var jar = path.join('build', 'libs', 'tech-trial-0.1.0.jar');
+    var jar = path.join('build', 'libs', 'tech-trial-0.0.1.jar');
     springProcess = spawn('java', ['-jar', jar], {cwd: path.join(process.cwd(), '..')});
 });
 

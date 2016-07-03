@@ -50,8 +50,7 @@ gulp.task('jasmine-phantom', function () {
             output: {filename: 'spec.js'},
             plugins: [
                 providePlugin,
-                definePlugin,
-                extractTextPlugin
+                definePlugin
             ],
             module: config.module,
             resolve: config.resolve

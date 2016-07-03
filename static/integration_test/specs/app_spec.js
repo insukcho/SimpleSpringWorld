@@ -9,7 +9,7 @@ describe('the app', function () {
     });
 
     it('greets the user', function *() {
-        expect(yield browser.getText('.cocntainer')).toContain('1.0.0');
+        expect(yield browser.getText('.container')).toContain('1.0.0');
 
     });
 

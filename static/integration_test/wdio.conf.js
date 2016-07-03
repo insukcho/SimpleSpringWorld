@@ -4,8 +4,8 @@ const _ = require('lodash');
 
 exports.host = 'localhost';
 exports.port = 8080;
-exports.username = 'insuk.cho@doosan.com';
-exports.password = 'keepitsimple';
+exports.username = 'isi.cho@gmail.com';
+exports.password = '1234';
 
 function configBuilder(host, port, username, password) {
     var config = {

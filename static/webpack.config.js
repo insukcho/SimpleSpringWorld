@@ -14,7 +14,7 @@ module.exports = [{
     },
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: '[name].temp.js',
+        filename: '[name].entry.js',
         chunkFilename: '[id].js'
     },
     plugins: [
