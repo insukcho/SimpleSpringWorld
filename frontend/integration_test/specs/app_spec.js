@@ -14,11 +14,3 @@ describe('the app', function () {
     });
 
 });
-
-function elementHasText(selector, text) {
-    return function () {
-        return this.getText(selector).then(function (t) {
-        	return _.includes(t, text);
-        })
-    };
-}
