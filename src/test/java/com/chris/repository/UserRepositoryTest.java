@@ -53,5 +53,47 @@ public class UserRepositoryTest {
 		
 		
 	}
+	
+	@Test
+	public void deleteUser() {
+		List<User> findAll = (List<User>) userRepository.findAll();
+		int size = findAll.size();
+		
+		User user = findAll.get(0);
+		
+		userRepository.delete(user.getRegNo());
+		findAll = (List<User>) userRepository.findAll();
+		assertThat(findAll.size(), equalTo(size -1));
+		userRepository.save(user);
+	}
+	
+	@Test
+	public void saveUser() {
+		List<User> findAll = (List<User>) userRepository.findAll();
+		int size = findAll.size();
+		
+		userRepository.save(new User(123L, "wara",  "1234", "Ryan White", "2010.11.02", "wara@airline.com", "I love SPRING!!", UserType.STAFF));
+		
+		findAll = (List<User>) userRepository.findAll();
+		assertThat(findAll.size(), equalTo(size + 1));
+		
+		User user = userRepository.findOne(123L);
+		
+		assertThat(user.getName(), equalTo("Ryan White"));
+		assertThat(user.getEmail(), equalTo("wara@airline.com"));
+		assertThat(user.getType(), equalTo(UserType.STAFF));
+		
+		userRepository.delete(123L);
+	}
+	
+	@Test
+	public void updateUser() {
+		List<User> users = (List<User>) userRepository.findAll();
+		User user = users.get(0);
+		user.setEmail("new.one@new.com");
+		userRepository.save(user);
+		
+		assertThat(userRepository.findOne(user.getRegNo()).getEmail(), equalTo("new.one@new.com"));
+	}
 
 }

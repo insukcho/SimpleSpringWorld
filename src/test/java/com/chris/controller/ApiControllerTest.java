@@ -20,8 +20,8 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.util.StreamUtils;
 
-import com.chris.repository.BookRepository;
-import com.chris.repository.FakeBookRepository;
+import com.chris.repository.FakeUserRepository;
+import com.chris.repository.UserRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = MockServletContext.class)
@@ -29,16 +29,16 @@ import com.chris.repository.FakeBookRepository;
 public class ApiControllerTest {
 	private MockMvc subject;
 	
-	BookRepository bookRepository = new FakeBookRepository();
+	UserRepository userRepository = new FakeUserRepository();
 
 	@Before
 	public void setUp() throws Exception {
-		subject = MockMvcBuilders.standaloneSetup(new ApiController(bookRepository)).build();
+		subject = MockMvcBuilders.standaloneSetup(new ApiController(userRepository)).build();
 	}
 
 	@Test
 	public void getData() throws IOException, Exception {
-		ResultActions responseJson = subject.perform(get("/books").accept(MediaType.APPLICATION_JSON_VALUE));
+		ResultActions responseJson = subject.perform(get("/users").accept(MediaType.APPLICATION_JSON_VALUE));
 		responseJson.andExpect(status().isOk()).andExpect(content().json(getJsonContent("response.json")));
 	}
 

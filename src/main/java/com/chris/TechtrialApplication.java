@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.chris.controller.ApiController;
-import com.chris.repository.BookRepository;
+import com.chris.repository.UserRepository;
 
 @ComponentScan
 @EnableAutoConfiguration
@@ -21,8 +21,8 @@ public class TechtrialApplication {
 	}
 	
     @Bean
-    ApiController apiController(BookRepository bookRepository) {
-        return new ApiController(bookRepository);
+    ApiController apiController(UserRepository userRepository) {
+        return new ApiController(userRepository);
     }
 
 }

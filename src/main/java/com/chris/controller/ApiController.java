@@ -1,24 +1,25 @@
 package com.chris.controller;
 
+import java.util.List;
+
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.chris.entity.Book;
-import com.chris.repository.BookRepository;
+import com.chris.entity.User;
+import com.chris.repository.UserRepository;
 
 @RestController
-@RequestMapping(value = "/books", produces = MediaType.APPLICATION_JSON_VALUE)
 public class ApiController {
 
-	private final BookRepository bookRepository;
+	private final UserRepository userRepository;
 
-	public ApiController(BookRepository bookRepository) {
-		this.bookRepository = bookRepository;
+	public ApiController(UserRepository userRepository) {
+		this.userRepository = userRepository;
 	}
 	
-	@RequestMapping
-	public Iterable<Book> books() {
-		return bookRepository.findAll();
+	@RequestMapping(value = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<User> users() {
+		return (List<User>) userRepository.findAll();
 	}
 }
