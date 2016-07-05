@@ -1,11 +1,7 @@
 package com.chris.entity;
 
-import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
-import com.chris.helper.UserTypeConverter;
-import com.chris.model.UserType;
 
 @Entity
 public class User {
@@ -18,12 +14,11 @@ public class User {
 	private String birthday;
 	private String email;
 	private String description;
-	@Convert(converter = UserTypeConverter.class)
-	private UserType type;
+	private String userType;
 	
 	public User() {}
 
-	public User(Long regNo, String id, String pwd, String name, String birthday, String email, String description, UserType type) {
+	public User(Long regNo, String id, String pwd, String name, String birthday, String email, String description, String userType) {
 		super();
 		this.regNo = regNo;
 		this.id = id;
@@ -32,7 +27,7 @@ public class User {
 		this.birthday = birthday;
 		this.email = email;
 		this.description = description;
-		this.type = type;
+		this.userType = userType;
 	}
 
 	public Long getRegNo() {
@@ -91,12 +86,12 @@ public class User {
 		this.description = description;
 	}
 
-	public UserType getType() {
-		return type;
+	public String getUserType() {
+		return userType;
 	}
 
-	public void setType(UserType type) {
-		this.type = type;
+	public void setUserType(String type) {
+		this.userType = type;
 	}
 
 	@Override
@@ -110,7 +105,7 @@ public class User {
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((pwd == null) ? 0 : pwd.hashCode());
 		result = prime * result + ((regNo == null) ? 0 : regNo.hashCode());
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
+		result = prime * result + ((userType == null) ? 0 : userType.hashCode());
 		return result;
 	}
 
@@ -158,7 +153,7 @@ public class User {
 				return false;
 		} else if (!regNo.equals(other.regNo))
 			return false;
-		if (type != other.type)
+		if (userType != other.userType)
 			return false;
 		return true;
 	}

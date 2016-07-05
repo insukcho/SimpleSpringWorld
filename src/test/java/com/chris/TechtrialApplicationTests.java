@@ -15,6 +15,7 @@ public class TechtrialApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		return;
 	}
 
 }

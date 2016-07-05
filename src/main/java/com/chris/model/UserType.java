@@ -1,5 +1,7 @@
 package com.chris.model;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public enum UserType {
 	PASSENGER("passenger"), STAFF("staff");
 	
@@ -9,6 +11,7 @@ public enum UserType {
 		this.name = name;
 	}
 	
+	@JsonValue
 	public String getName() {
 		return this.name;
 	}

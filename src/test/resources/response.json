@@ -1,4 +1,4 @@
 [
- {"regNo": 11, "id": "wara",  "pwd": "1234", "name": "Ryan White", "birthday": "2010.11.02", "email": "wara@airline.com", "description": "I love SPRING!!", "type": "STAFF"},
- {"regNo": 12, "id": "napal",  "pwd": "4321", "name": "Chris Cho", "birthday": "1980.04.05", "email": "napal@bbb.com", "description": "You love SPRING!!", "type": "PASSENGER"}
+ {"regNo": 11, "id": "wara",  "pwd": "1234", "name": "Ryan White", "birthday": "2010.11.02", "email": "wara@airline.com", "description": "I love SPRING!!", "userType": "Staff"},
+ {"regNo": 12, "id": "napal",  "pwd": "4321", "name": "Chris Cho", "birthday": "1980.04.05", "email": "napal@bbb.com", "description": "You love SPRING!!", "userType": "Passenger"}
 ]

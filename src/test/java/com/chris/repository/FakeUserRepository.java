@@ -43,8 +43,8 @@ public class FakeUserRepository implements UserRepository {
 	public Iterable<User> findAll() {
 		deleteAll();
 		
-		save(new User(11L, "wara",  "1234", "Ryan White", "2010.11.02", "wara@airline.com", "I love SPRING!!", UserType.STAFF));
-		save(new User(12L, "napal",  "4321", "Chris Cho", "1980.04.05", "napal@bbb.com", "You love SPRING!!", UserType.PASSENGER));
+		save(new User(11L, "wara",  "1234", "Ryan White", "2010.11.02", "wara@airline.com", "I love SPRING!!", "Staff"));
+		save(new User(12L, "napal",  "4321", "Chris Cho", "1980.04.05", "napal@bbb.com", "You love SPRING!!", "Passenger"));
 		
 		return users;
 	}
