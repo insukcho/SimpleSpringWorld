@@ -25,7 +25,9 @@ Need to open for extension but closed for modification, Define interface first a
 ## Instructions to install and configure prerequisites or dependencies
 ### For Windows user
 1) Internet should be able to access
-2) JVM 8 should be installed and add JVM\bin folder in ‘path’ on your system variable
+2) JDK 8 should be installed and add JVM\bin folder in ‘path’ on your system variable (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+[notice] It is fully tested with JDK 1.8.0_91
+3) Open command prompt and type `javac -version', check your JDK 8 is in the path, correctly
 
 ## Instructions to create and initialize the database
 This project use HSQL, embedded in-memory DB, so, don’t need to install any database. When you run this app, database will be initialized by itself using `techtrial\src\main\resources\data.sql`.
@@ -44,14 +46,14 @@ This project use HSQL, embedded in-memory DB, so, don’t need to install any da
 5) Features (Reservation, Online checkin/cancellation)
 
 ## Instructions to configure and prepare the source code to build and run properly
-1) Unzip techtrial.zip file on convinent directory (ex: d:\techtrial)
-2) Open command prompt from above  directory
+1) Unzip Chris_Cho_CA_Air2.zip file on convenient directory
+2) Open command prompt from 'techtrial' directory
 3) Insert `bin\mvnw clean package` on command prompt. This will do below step, automatically.
-    Step1. Download all libraries on your laptop’s maven repository
+    Step1. Download all libraries on your laptop’s maven repository once
     Step2. Compile java source code to class
     Step3. Do all unit tests (Repository Test & APIController Test)
     Step4. If all tests passed, package as a executable jar file in ‘target’ folder
-4) Insert ‘java -jar target\techtrial-0.0.1-SNAPSHOT.jar` for running spring-boot application with 8080 port
+4) Insert `java -jar target\techtrial-0.0.1-SNAPSHOT.jar` for running spring-boot application with 8080 port
 5) Open web browser and visit `http://localhost:8080`
 6) Login information is below (from techtrial\src\main\resources\application.yml)
     ID: isi.cho@gmail.com
@@ -64,7 +66,6 @@ This project use HSQL, embedded in-memory DB, so, don’t need to install any da
 ## Any feedback you wish to give for improving the assignment and our process
 - I apply ‘Chief Software Architect - JAVA’ and was little bit confused I need to write UI code. If you write description little bit more in details, it will help to set exact scope.
 - I like this trial project. It is not possible to do this trial w/o specific experience. Much better than algorithms coding test with time/space complexity.
-
 
 ## Unit Test Type and test data
 1) Rest Controller test using Fake repository
