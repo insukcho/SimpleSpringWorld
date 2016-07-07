@@ -30,25 +30,23 @@ public class UserRepositoryTest {
 		
 		assertThat(user.getRegNo(), equalTo(1L));
 		assertThat(user.getName(), equalTo("Chris Cho"));
-		assertThat(user.getUserType(), equalTo(UserType.PASSENGER));
+		assertThat(user.getUserType(), equalTo(UserType.PASSENGER.getName()));
 	}
 	
 	@Test
 	public void findAllUsers() {
 		List<User> findAll = (List<User>) userRepository.findAll();
 		
-		assertThat(findAll.size(), equalTo(3));
-		
 		User firstUser = findAll.get(0);
 		
 		assertThat(firstUser.getRegNo(), equalTo(1L));
 		assertThat(firstUser.getName(), equalTo("Chris Cho"));
-		assertThat(firstUser.getUserType(), equalTo(UserType.PASSENGER));
+		assertThat(firstUser.getUserType(), equalTo(UserType.PASSENGER.getName()));
 		
 		User lastUser = findAll.get(findAll.size() - 1);
 		assertThat(lastUser.getRegNo(), equalTo(3L));
 		assertThat(lastUser.getName(), equalTo("Max Johns"));
-		assertThat(lastUser.getUserType(), equalTo(UserType.STAFF));
+		assertThat(lastUser.getUserType(), equalTo(UserType.STAFF.getName()));
 		
 		
 		
@@ -72,7 +70,7 @@ public class UserRepositoryTest {
 		List<User> findAll = (List<User>) userRepository.findAll();
 		int size = findAll.size();
 		
-		userRepository.save(new User(123L, "wara",  "1234", "Ryan White", "2010.11.02", "wara@airline.com", "I love SPRING!!", "Staff"));
+		userRepository.save(new User(123L, "wara",  "1234", "Ryan White", "2010.11.02", "wara@airline.com", "I love SPRING!!", "staff"));
 		
 		findAll = (List<User>) userRepository.findAll();
 		assertThat(findAll.size(), equalTo(size + 1));
@@ -81,7 +79,7 @@ public class UserRepositoryTest {
 		
 		assertThat(user.getName(), equalTo("Ryan White"));
 		assertThat(user.getEmail(), equalTo("wara@airline.com"));
-		assertThat(user.getUserType(), equalTo(UserType.STAFF));
+		assertThat(user.getUserType(), equalTo(UserType.STAFF.getName()));
 		
 		userRepository.delete(123L);
 	}
