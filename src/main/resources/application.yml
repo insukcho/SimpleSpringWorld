@@ -1,0 +1,5 @@
+security:
+  require-ssl: false
+  user:
+    name: isi.cho@gmail.com
+    password: 1234
