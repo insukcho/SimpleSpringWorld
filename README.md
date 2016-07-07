@@ -71,3 +71,5 @@ This project use HSQL, embedded in-memory DB, so, don’t need to install any da
 1) Rest Controller test using Fake repository
 2) Repository unit test using HSQL
 
+## About source code
+I just add eclipse project folder, so if you use eclipse, you can import this folder in eclipse with same eclipse project configuration.
